@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "rbdash"
+version = "0.1.0"
+description = ""
+authors = ["Martin Tomes <martin@tomes.ink>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.34.0"
+pandas = "^2.2.2"
+requests = "^2.31.0"
+plotly = "^5.22.0"
+
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+flake8 = "^7.0.0"
+black = "^24.4.2"
+mypy = "^1.10.0"
+ruff = "^0.4.3"
+
+
+[tool.poetry.group.build.dependencies]
+twine = "^5.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+extend-ignore = "E203"
+
+[tool.ruff]
+select = ["E", "F"]
+line-length = 120
+
+[tool.mypy]
+disallow_untyped_defs = true
+disallow_any_unimported = true
+no_implicit_optional = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+show_error_codes = true
